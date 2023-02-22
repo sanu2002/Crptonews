@@ -1,0 +1,66 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+
+{% if notfound %}
+
+     {{ notfound }}
+
+{% else %}
+
+      {% if crypto.Response %}
+       <h1>sorry {{quotes}} doesnot exit,Please try again</h1>
+
+      {% endif %}
+   
+
+
+
+
+
+
+
+
+
+
+
+{% for key,value in crypto.DISPLAY.items %}
+     
+     <div class="border border-primary bg-success " style="margin:10px 20px 30px 30px">    
+    
+            <div class="jumbotron" style="padding: 20px 20px 20px 50%">
+                <h1 class="display-4">{{key}}</h1>
+                <strong>NAME</strong>:{{key}}<br>
+
+                <strong>PRICE</strong>:{{value.USD.PRICE}}<br>
+                <strong>DAY HIGH</strong>:{{value.USD.HIGHDAY}}<br>
+                <strong>DAY LOW</strong>:{{value.USD.LOWDAY}}<br>
+                <strong>MARKET CAP</strong>:{{value.USD.MKTCAP}}<br>
+              
+               
+            </div>
+
+        </div>
+
+
+
+       
+{% endfor %}
+
+{% endif %}
+        
+        
+        
+        
+        <br>
+        <br>
+<!--         
+        {{crypto}}       -->
+
+
+
+
+
+
+{% endblock %}
